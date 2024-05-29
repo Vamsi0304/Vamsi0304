@@ -1,0 +1,236 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Image Immunizer</title>
+      
+      <link rel="shortcut icon" href="../static/assets/images/favicon.ico" />
+      <link rel="stylesheet" href="../static/assets/css/libs.min.css">
+      <link rel="stylesheet" href="../static/assets/css/socialv.css?v=4.0.0">
+      <link rel="stylesheet" href="../static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+      <link rel="stylesheet" href="../static/assets/vendor/remixicon/fonts/remixicon.css">
+      <link rel="stylesheet" href="../static/assets/vendor/vanillajs-datepicker/dist/css/datepicker.min.css">
+      <link rel="stylesheet" href="../static/assets/vendor/font-awesome-line-awesome/css/all.min.css">
+      <link rel="stylesheet" href="../static/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      
+  </head>
+  <body class="  ">
+    <!-- loader Start -->
+    <!--<div id="loading">
+          <div id="loading-center">
+          </div>
+    </div>-->
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+      <div class="iq-sidebar  sidebar-default ">
+          <div id="sidebar-scrollbar">
+              <nav class="iq-sidebar-menu">
+                  <ul id="iq-sidebar-toggle" class="iq-menu">
+                      <li class="">
+                          <a href="/admin" class=" "> 
+                              <i class="las la-newspaper"></i><span>Home</span>
+                          </a>
+                      </li>
+                      
+                     
+                  </ul>
+                  </nav>
+                  <div class="p-5"></div>
+              </div>
+          </div>
+      
+              <div class="iq-top-navbar">
+          <div class="iq-navbar-custom">
+              <nav class="navbar navbar-expand-lg navbar-light p-0">
+                  <div class="iq-navbar-logo d-flex justify-content-between">
+                      <a href="../static/dashboard/index.html">
+                          <img src="../static/assets/images/logo.png" class="img-fluid" alt="">
+                          <span>Immunizer</span>
+                      </a>
+                      <div class="iq-menu-bt align-self-center">
+                          <div class="wrapper-menu">
+                              <div class="main-circle"><i class="ri-menu-line"></i></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="iq-search-bar device-search">
+                      
+                  </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                      aria-label="Toggle navigation">
+                      <i class="ri-menu-3-line"></i>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav  ms-auto navbar-list">
+                        
+                         
+                           <li class="nav-item dropdown">
+                              <a href="#" class="   d-flex align-items-center dropdown-toggle" id="drop-down-arrow" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img src="../static/assets/images/profile.jpg" class="img-fluid rounded-circle me-3" alt="user">
+                                  <div class="caption">
+                                      <h6 class="mb-0 line-height">Immunizer</h6>
+                                  </div>
+                              </a>
+                              <div class="sub-drop dropdown-menu caption-menu" aria-labelledby="drop-down-arrow">
+                                  <div class="card shadow-none m-0">
+                                       <div class="card-header  bg-primary">
+                                          <div class="header-title">
+                                              <h5 class="mb-0 text-white">Admin</h5>
+                                              <span class="text-white font-size-12">Available</span>
+                                          </div>
+                                      </div>
+                                      <div class="card-body p-0 ">
+                                          
+                                          <div class="d-inline-block w-100 text-center p-3">
+                                              <a class="btn btn-primary iq-sign-btn" href="/logout" role="button">Sign
+                                                  out<i class="ri-login-box-line ms-2"></i></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>               
+                  </div>
+              </nav>
+          </div>
+      </div>       <div class="right-sidebar-mini right-sidebar">
+           <div class="right-sidebar-panel p-0">
+              <div class="card shadow-none">
+                 <div class="card-body p-0">
+                    <div class="media-height p-3" data-scrollbar="init">
+                      
+                    </div>
+                    
+                 </div>
+              </div>
+           </div>
+        </div>        
+		
+		<!-- Page Content  -->
+		<p>&nbsp;</p>
+        <div class="header-for-bg">
+            <div class="background-header position-relative">
+               <!-- <img src="../static/assets/images/page-img/profile-bg7.jpg" class="img-fluid w-100" alt="header-bg">-->
+                <div class="title-on-header">
+                    <div class="data-block">
+                        <h2>Image Immunizer</h2>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Page Content  -->       
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			
+	<div id="content-page" class="content-page">
+        <div class="container">
+            <div class="d-grid gap-3 d-grid-template-1fr-19">
+			
+			
+				{% for rs in data %}
+                <div class="card mb-0">
+                <div class="top-bg-image">
+                   <img src="../static/assets/images/page-img/profile-bg2.jpg" class="img-fluid w-100" alt="group-bg">
+                </div>
+                <div class="card-body text-center">
+                    <div class="group-icon">
+                        <img src="../static/upload/{{rs[6]}}" alt="img" width="200" height="200">
+                    </div>
+                    <div class="group-info pt-3 pb-3">
+                        <h4><a href=""> 
+						{% if rs[7]=="similar" %}
+						Similar Image
+						{% elif rs[7]=="splice" %}
+						<span style="color:#FF0000">Attack: </span>Splicing
+						{% elif rs[7]=="copy" %}
+						<span style="color:#FF0000">Attack: </span>Copy-move
+						{% elif rs[7]=="inpaint" %}
+						<span style="color:#FF0000">Attack: </span>Inpainting
+						{% endif %}
+						</a></h4>
+                        <p>Posted User: {{rs[1]}}</p>
+						<p>Attacked User: {{rs[2]}}</p>
+						<p>{{rs[10]}}</p>
+                    </div>
+                    
+                    <a href="/admin_view?mid={{rs[0]}}" class="btn btn-primary d-block w-100">Info</a>
+                </div>
+                </div>
+				{% endfor %}
+				
+				
+             
+			 
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wrapper End-->
+    <footer class="iq-footer bg-white">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-lg-6">
+                
+             </div>
+             <div class="col-lg-6 d-flex justify-content-end">
+               Image Immunizer <a href="#"></a> 
+             </div>
+          </div>
+       </div>
+    </footer>    <!-- Backend Bundle JavaScript -->
+    <script src="../static/assets/js/libs.min.js"></script>
+    <!-- slider JavaScript -->
+    <script src="../static/assets/js/slider.js"></script>
+    <!-- masonry JavaScript --> 
+    <script src="../static/assets/js/masonry.pkgd.min.js"></script>
+    <!-- SweetAlert JavaScript -->
+    <script src="../static/assets/js/enchanter.js"></script>
+    <!-- SweetAlert JavaScript -->
+    <script src="../static/assets/js/sweetalert.js"></script>
+    <!-- app JavaScript -->
+    <script src="../static/assets/js/charts/weather-chart.js"></script>
+    <script src="../static/assets/js/app.js"></script>
+    <script src="../static/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+    <script src="../static/assets/js/lottie.js"></script>
+    
+
+    <!-- offcanvas start -->
+ 
+    <div class="offcanvas offcanvas-bottom share-offcanvas" tabindex="-1" id="share-btn" aria-labelledby="shareBottomLabel">
+       <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="shareBottomLabel">Share</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+       </div>
+       <div class="offcanvas-body small">
+          <div class="d-flex flex-wrap align-items-center">
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/08.png" class="img-fluid rounded mb-2" alt="">
+                <h6>Facebook</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/09.png" class="img-fluid rounded mb-2" alt="">
+                <h6>Twitter</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/10.png" class="img-fluid rounded mb-2" alt="">
+                <h6>Instagram</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/11.png" class="img-fluid rounded mb-2" alt="">
+                <h6>Google Plus</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/13.png" class="img-fluid rounded mb-2" alt="">
+                <h6>In</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../static/assets/images/icon/12.png" class="img-fluid rounded mb-2" alt="">
+                <h6>YouTube</h6>
+             </div>
+          </div>
+       </div>
+    </div>
+  </body>
+</html>
